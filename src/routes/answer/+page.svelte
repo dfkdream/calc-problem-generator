@@ -2,7 +2,8 @@
 import Problem from '../../components/Problem.svelte';
 import A4 from '../../components/A4.svelte';
 
-export let data;
+import { page } from '$app/stores';
+import { onMount } from 'svelte';
 
 const operators = ["+"];
 
@@ -25,8 +26,12 @@ function parseProblems(str){
 	return result;
 }
 
-let problems = parseProblems(data.params.toString());
+let problems = [];
 let problem;
+
+onMount(()=>{
+	problems = parseProblems($page.url.searchParams.toString());
+});
 </script>
 
 <A4>

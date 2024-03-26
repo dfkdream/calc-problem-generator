@@ -37,7 +37,6 @@ span.operator-line{
 }
 
 span.answer{
-	//height: 1em;
 	border-top: 2px solid black;
 }
 </style>
